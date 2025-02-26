@@ -21,3 +21,5 @@ git commit -m "versão x"
 git push origin main
 
 ### Instalação 
+[Git Bash](https://git-scm.com/downloads)
+
