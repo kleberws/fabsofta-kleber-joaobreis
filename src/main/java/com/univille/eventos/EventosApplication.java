@@ -1,4 +1,4 @@
-package com.univille.eventos.Eventos;
+package com.univille.eventos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
