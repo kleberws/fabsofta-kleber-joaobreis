@@ -12,7 +12,7 @@
   - Lista de Inscrições
   - Página de Login
   - Realizar Formulários
-<s>
+
 
 ## Histórias de Usuário
   - Como um promotor eu gostaria de cadastrar um evento no site.
@@ -23,7 +23,7 @@
   - Como um usuario/promotor eu gostaria de realizar o login da sua conta no site.
   - Como um usuario eu gostaria de preencher um formulario sobre as perguntas pertinentes ao evento.
   - Como um usuario eu gostaria de visualizar os eventos disponiveis.
-<s>
+
 
 ### Instalação
 [Git Bash](https://git-scm.com/downloads)
@@ -42,5 +42,5 @@ git config --global user.email "EMAIL DA CONTA DO GITHUB"
   - refactor: (refactoring production code, eg. renaming a variable)
   - test: (adding missing tests, refactoring tests; no production code change)
   - chore: (updating grunt tasks etc; no production code change)
-<s>
+
 
