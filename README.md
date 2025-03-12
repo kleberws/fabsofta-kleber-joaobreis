@@ -43,4 +43,11 @@ git config --global user.email "EMAIL DA CONTA DO GITHUB"
   - test: (adding missing tests, refactoring tests; no production code change)
   - chore: (updating grunt tasks etc; no production code change)
 
-
+### Criação de projeto no VSCode com Maven
+1) teclar f1
+2) Java Create
+3) project type Maven
+4) Archetype: No Archetype
+5) domonio: br.univille
+6) nome do projeto em minusculo
+7) usar a pasta sugerida pelo VSCode
