@@ -1,4 +1,4 @@
-package br.univille;
+package br.univille.entity;
 
 
 public class App {
@@ -31,7 +31,5 @@ public class App {
         //caso 8 - visualizar eventos disponiveis
         Pessoa isadora = new Pessoa("Isadora");
 
-        System.out.println(mariazinha);
-        System.out.println(zezinho);
     }
 }
