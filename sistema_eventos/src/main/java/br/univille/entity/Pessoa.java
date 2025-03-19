@@ -1,14 +1,17 @@
 package br.univille.entity;
 
+import java.util.ArrayList;
+
 public class Pessoa {
-    //atributo (variável)
+    //atributo variável
     private String nome;
     private long id;
     private String endereco;
 
     //FORIGN KEY 
     private Cidade cidade;
-
+    private ArrayList listPokemon = new ArrayList<>();
+    
     //construtor(ctor)
     //obriga a passar alguma coisa dentro de (), ou é um inicializador.
     public Pessoa(String nome) {
@@ -19,8 +22,6 @@ public class Pessoa {
     }
 
     //método
-
-    
     public String getNome() {
         return nome;
     }
@@ -49,5 +50,11 @@ public class Pessoa {
     }
     public void setCidade(Cidade cidade) {
         this.cidade = cidade;
+    }
+    public ArrayList getListPokemon() {
+        return listPokemon;
+    }
+    public void setListPokemon(ArrayList listPokemon) {
+        this.listPokemon = listPokemon;
     }
 }

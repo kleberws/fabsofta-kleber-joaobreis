@@ -1,11 +1,18 @@
-package br.univille.entity;
+package br.univille;
 
+import br.univille.entity.Cidade;
+import br.univille.entity.Pessoa;
+import br.univille.entity.Pokemon;
 
 public class App {
     public static void main(String[] args) throws Exception {
-  
-        //Pessoa mariazinha= variavel
-        //new Pessoa()= instância
+
+        Cidade joinville = new Cidade();
+        joinville.setNome("Joinville");
+        joinville.setEstado("Santa Catarina");
+
+        Pokemon pokemon1 = new Pokemon("Sla123");
+
 
         //caso 1- cadastrar evento
         Pessoa mariazinha = new Pessoa("Mariazinha");
@@ -30,6 +37,9 @@ public class App {
 
         //caso 8 - visualizar eventos disponiveis
         Pessoa isadora = new Pessoa("Isadora");
+        
+        Pokemon pokemon123 = new Pokemon("123");
+        zezinho.getListPokemon().add(pokemon123);
 
     }
 }
