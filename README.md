@@ -68,7 +68,9 @@ git config --global user.email "EMAIL DA CONTA DO GITHUB"
 ### scripts copilout
 - Criar as entidades
 - @workspace #sym:## Histórias de Usuário por favor, encontre as entidades
+- 
 - Gerar as classes Java das entidades
 - @workspace por favor, gere no pacote br.univille.projfabsoft.entity as classes java para representar as entidades
+- 
 - Gerar o diagrama de entidades UML
 - @workspace por favor, gere um diagrama uml utilizando o padrão plantuml para as classes no pacote br.univille.projfabsoft.entity
