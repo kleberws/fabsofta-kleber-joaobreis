@@ -49,3 +49,26 @@ git config --global user.email "EMAIL DA CONTA DO GITHUB"
 5) domonio: br.univille
 6) nome do projeto em minusculo
 7) usar a pasta sugerida pelo VSCode
+
+### Revisão de Java
+
+- JRE - Java Runtime Environment (java.exe)
+- Máquina virtual do Java - interpreta o Bytecode(.class) do Java para linguagem de máquina
+- JDK - Java Development Kit (javac.exe)
+- Compilar o código Java em bytecode (.class)
+- Criação de projeto no VSCode com Maven
+- teclar F1
+- digitar Java e escolher a opção create new java project
+- project type: MAVEN
+- Archetype: No Archetype
+- pacote digitar domínio ao contrário ex: br.univille
+- nome do projeto em minúsculo
+- usar a pasta sugerida pelo vscode
+
+### scripts copilout
+- Criar as entidades
+- @workspace #sym:## Histórias de Usuário por favor, encontre as entidades
+- Gerar as classes Java das entidades
+- @workspace por favor, gere no pacote br.univille.projfabsoft.entity as classes java para representar as entidades
+- Gerar o diagrama de entidades UML
+- @workspace por favor, gere um diagrama uml utilizando o padrão plantuml para as classes no pacote br.univille.projfabsoft.entity
