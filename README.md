@@ -21,8 +21,6 @@
   - Como um promotor eu gostaria de realizar uma inscrição de usuarios para um evento.
   - Como um promotor eu gostaria de visualizar o nome das pessoas que estão interessadas no evento.
   - Como um usuario/promotor eu gostaria de realizar o login da sua conta no site.
-  - Como um usuario eu gostaria de preencher um formulario sobre as perguntas pertinentes ao evento.
-  - Como um usuario eu gostaria de visualizar os eventos disponiveis.
 
 
 ### Instalação
