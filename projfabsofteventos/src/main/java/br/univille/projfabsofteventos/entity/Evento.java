@@ -8,16 +8,21 @@ public class Evento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
 
+    @Column(nullable = false)
     private String nome;
 
     private String descricao;
 
+    @Column(nullable = false)
     private String data;
 
+    @Column(nullable = false)
     private String local;
 
+    @Column(nullable = false)
     private String organizador;
 
     @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
