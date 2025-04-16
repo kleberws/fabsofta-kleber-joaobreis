@@ -2,6 +2,7 @@ package br.univille.projfabsofteventos.entity;
 
 import java.util.Date;
 
+import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.*;
@@ -11,7 +12,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(length = 1000, nullable = false)
     private String nome;
@@ -31,11 +32,11 @@ public class Usuario {
     private Date dataDeNascimento;
 
     // Getters and Setters
-        public Long getId() {
+        public long getId() {
             return id;
         }
     
-        public void setId(Long id) {
+        public void setId(long id) {
             this.id = id;
         }
     
