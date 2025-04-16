@@ -43,10 +43,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     //deletar
     @Override
     public Usuario delete(long id) {
-        var cliente = getById(id);
-        if(cliente != null)
+        var usuario = getById(id);
+        if(usuario != null)
             repository.deleteById(id);
-        repository.deleteById(id);
+        return usuario;
     }
-    
+
 }

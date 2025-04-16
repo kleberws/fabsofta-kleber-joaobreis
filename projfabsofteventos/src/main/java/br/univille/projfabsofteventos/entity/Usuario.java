@@ -1,8 +1,6 @@
 package br.univille.projfabsofteventos.entity;
 
 import java.util.Date;
-
-import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.*;

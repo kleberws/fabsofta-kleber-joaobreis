@@ -15,6 +15,7 @@ public class Suporte {
 
     private String mensagem;
 
+    //ainda nao utilizado:
     private String dataEnvio;
 
     // Getters and Setters
