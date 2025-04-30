@@ -40,4 +40,16 @@ public class Suporte {
         public String getMensagem() {
             return mensagem;
         }
+
+        public void setMensagem(String mensagem) {
+            this.mensagem = mensagem;
+        }
+
+        public String getDataEnvio() {
+            return dataEnvio;
+        }
+
+        public void setDataEnvio(String dataEnvio) {
+            this.dataEnvio = dataEnvio;
+        }
 }

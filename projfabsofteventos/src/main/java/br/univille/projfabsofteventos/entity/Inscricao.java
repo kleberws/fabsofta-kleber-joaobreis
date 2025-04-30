@@ -47,4 +47,10 @@ public class Inscricao {
     public String getDataInscricao() {
         return dataInscricao;
     }
+
+    public void setDataInscricao(String dataInscricao) {
+        this.dataInscricao = dataInscricao;
+    }
+
+    
 }

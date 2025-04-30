@@ -1,0 +1,138 @@
+### API USUARIOS - GET
+GET http://localhost:8080/api/v1/usuarios
+
+### API USUARIOS - POST
+POST http://localhost:8080/api/v1/usuarios
+Content-Type: application/json
+
+{
+    "nome": "zezinho",
+    "email": "ze@ze.com.br",
+    "senha": "123456",
+    "tipo": "participante",
+    "dataDeNascimento": "2025-04-15"
+}
+
+//erro
+
+### API USUARIOS - PUT
+PUT http://localhost:8080/api/v1/usuarios/1
+Content-Type: application/json
+
+{
+    "nome": "zezinho da silva sauro",
+    "email": "ze@ze.com.br",
+    "senha": "654321",
+    "tipo": "promotor",
+    "dataDeNascimento": "2025-04-15"
+}
+
+//erro
+### API USUARIOS - DELETE
+DELETE http://localhost:8080/api/v1/usuarios/1
+Content-Type: application/json
+
+
+### API EVENTOS - GET
+GET http://localhost:8080/api/v1/eventos
+
+### API EVENTOS - POST
+POST http://localhost:8080/api/v1/eventos
+Content-Type: application/json
+
+{
+    "nome": "Evento de Tecnologia",
+    "descricao": "Um evento sobre inovações tecnológicas.",
+    "data": "2025-05-20",
+    "local": "Centro de Convenções",
+    "organizador": "João Promotor"
+}
+
+### API EVENTOS - PUT
+
+//erro
+PUT http://localhost:8080/api/v1/eventos/1
+Content-Type: application/json
+
+{
+    "nome": "Evento de Tecnologia Atualizado",
+    "descricao": "Um evento atualizado sobre inovações tecnológicas.",
+    "data": "2025-06-15",
+    "local": "Centro de Convenções Atualizado",
+    "organizador": "João Promotor Atualizado"
+}
+
+//erro
+### API EVENTOS - DELETE
+DELETE http://localhost:8080/api/v1/eventos/1
+Content-Type: application/json
+
+
+### API INSCRICOES - GET
+GET http://localhost:8080/api/v1/inscricoes
+
+### API INSCRICOES - POST
+POST http://localhost:8080/api/v1/inscricoes
+Content-Type: application/json
+
+{
+    "evento": {
+        "id": 1
+    },
+    "usuario": {
+        "id": 1
+    },
+    "dataInscricao": "2025-04-15"
+}
+
+### API INSCRICOES - PUT
+
+//erro
+PUT http://localhost:8080/api/v1/inscricoes/1
+Content-Type: application/json
+
+{
+    "evento": {
+        "id": 2
+    },
+    "usuario": {
+        "id": 1
+    },
+    "dataInscricao": "2025-04-20"
+}
+
+### API INSCRICOES - DELETE
+DELETE http://localhost:8080/api/v1/inscricoes/1
+Content-Type: application/json
+
+
+### API SUPORTE - GET
+GET http://localhost:8080/api/v1/suportes
+
+### API SUPORTE - POST
+POST http://localhost:8080/api/v1/suportes
+Content-Type: application/json
+
+{
+    "usuario": {
+        "id": 1
+    },
+    "mensagem": "Estou com problemas para acessar o evento."
+}
+
+### API SUPORTE - PUT
+//erro
+PUT http://localhost:8080/api/v1/suportes/1
+Content-Type: application/json
+
+{
+    "usuario": {
+        "id": 1
+    },
+    "mensagem": "Atualização: Problema resolvido, mas tenho outra dúvida."
+}
+
+//erro
+### API SUPORTE - DELETE
+DELETE http://localhost:8080/api/v1/suportes/1
+Content-Type: application/json

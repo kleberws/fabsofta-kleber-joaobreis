@@ -56,4 +56,43 @@ public class Evento {
     public String getDescricao() {
         return descricao;
     }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    public void setOrganizador(String organizador) {
+        this.organizador = organizador;
+    }
+
+    public void setInscricoes(List<Inscricao> inscricoes) {
+        this.inscricoes = inscricoes;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public String getOrganizador() {
+        return organizador;
+    }
+
+    public List<Inscricao> getInscricoes() {
+        return inscricoes;
+    }
+
+    
+    
 }
