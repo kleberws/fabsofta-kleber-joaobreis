@@ -13,8 +13,6 @@ Content-Type: application/json
     "dataDeNascimento": "2025-04-15"
 }
 
-//erro
-
 ### API USUARIOS - PUT
 PUT http://localhost:8080/api/v1/usuarios/1
 Content-Type: application/json
@@ -27,7 +25,6 @@ Content-Type: application/json
     "dataDeNascimento": "2025-04-15"
 }
 
-//erro
 ### API USUARIOS - DELETE
 DELETE http://localhost:8080/api/v1/usuarios/1
 Content-Type: application/json
@@ -49,8 +46,6 @@ Content-Type: application/json
 }
 
 ### API EVENTOS - PUT
-
-//erro
 PUT http://localhost:8080/api/v1/eventos/1
 Content-Type: application/json
 
@@ -62,7 +57,7 @@ Content-Type: application/json
     "organizador": "João Promotor Atualizado"
 }
 
-//erro
+
 ### API EVENTOS - DELETE
 DELETE http://localhost:8080/api/v1/eventos/1
 Content-Type: application/json
@@ -87,7 +82,6 @@ Content-Type: application/json
 
 ### API INSCRICOES - PUT
 
-//erro
 PUT http://localhost:8080/api/v1/inscricoes/1
 Content-Type: application/json
 
@@ -121,7 +115,6 @@ Content-Type: application/json
 }
 
 ### API SUPORTE - PUT
-//erro
 PUT http://localhost:8080/api/v1/suportes/1
 Content-Type: application/json
 
@@ -132,7 +125,6 @@ Content-Type: application/json
     "mensagem": "Atualização: Problema resolvido, mas tenho outra dúvida."
 }
 
-//erro
 ### API SUPORTE - DELETE
 DELETE http://localhost:8080/api/v1/suportes/1
 Content-Type: application/json
