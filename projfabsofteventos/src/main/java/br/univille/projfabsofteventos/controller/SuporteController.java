@@ -23,19 +23,21 @@ public class SuporteController {
     }
 
     @PostMapping
-    public ResponseEntity<Suporte> postSuporte(@RequestBody Suporte suporte) {
-        if (suporte == null) {
-            return ResponseEntity.badRequest().build();
+    public ResponseEntity<?> postSuporte(@RequestBody Suporte suporte) {
+        try {
+            var novoSuporte = service.save(suporte);
+            return new ResponseEntity<>(novoSuporte, HttpStatus.CREATED);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
-        service.save(suporte);
-        return new ResponseEntity<>(suporte, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Suporte> putSuporte(@PathVariable long id, @RequestBody Suporte suporte) {
+    public ResponseEntity<?> putSuporte(@PathVariable long id, @RequestBody Suporte suporte) {
         if (id <= 0 || suporte == null) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().body("ID ou suporte inválido.");
         }
+
         var suporteAntigo = service.getById(id);
         if (suporteAntigo == null) {
             return ResponseEntity.notFound().build();
@@ -44,8 +46,12 @@ public class SuporteController {
         suporteAntigo.setMensagem(suporte.getMensagem());
         suporteAntigo.setUsuario(suporte.getUsuario());
 
-        service.save(suporteAntigo);
-        return new ResponseEntity<>(suporteAntigo, HttpStatus.OK);
+        try {
+            var suporteAtualizado = service.save(suporteAntigo);
+            return new ResponseEntity<>(suporteAtualizado, HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @DeleteMapping("/{id}")

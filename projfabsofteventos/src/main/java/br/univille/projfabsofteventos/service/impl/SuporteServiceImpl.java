@@ -7,45 +7,51 @@ import org.springframework.stereotype.Service;
 
 import br.univille.projfabsofteventos.entity.Suporte;
 import br.univille.projfabsofteventos.repository.SuporteRepository;
+import br.univille.projfabsofteventos.repository.UsuarioRepository;
 import br.univille.projfabsofteventos.service.SuporteService;
-
-
 
 @Service
 public class SuporteServiceImpl implements SuporteService {
 
-    //conectar banco Autowired
     @Autowired
     private SuporteRepository repository;
 
-    //retorna 
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
     @Override
     public Suporte save(Suporte suporte) {
+        if (suporte.getUsuario() == null || suporte.getUsuario().getId() <= 0) {
+            throw new IllegalArgumentException("Usuário inválido.");
+        }
+
+        // Verifica se o usuário existe no banco
+        boolean usuarioExiste = usuarioRepository.existsById(suporte.getUsuario().getId());
+        if (!usuarioExiste) {
+            throw new IllegalArgumentException("Usuário não encontrado.");
+        }
+
         return repository.save(suporte);
     }
 
-    //retorna lista
     @Override
     public List<Suporte> getAll() {
         return repository.findAll();
     }
 
-    //pegar especifico
     @Override
     public Suporte getById(long id) {
         var retorno = repository.findById(id);
-        if(retorno.isPresent())
+        if (retorno.isPresent())
             return retorno.get();
         return null;
     }
 
-    //deletar
     @Override
     public Suporte delete(long id) {
         var suporte = getById(id);
-        if(suporte != null)
+        if (suporte != null)
             repository.deleteById(id);
         return suporte;
     }
-
 }

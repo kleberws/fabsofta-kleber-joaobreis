@@ -23,12 +23,16 @@ public class InscricaoController {
     }
 
     @PostMapping
-    public ResponseEntity<Inscricao> postInscricao(@RequestBody Inscricao inscricao) {
+    public ResponseEntity<?> postInscricao(@RequestBody Inscricao inscricao) {
         if (inscricao == null) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().body("Inscrição inválida.");
         }
-        service.save(inscricao);
-        return new ResponseEntity<>(inscricao, HttpStatus.CREATED);
+        try {
+            var novaInscricao = service.save(inscricao);
+            return new ResponseEntity<>(novaInscricao, HttpStatus.CREATED);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")
