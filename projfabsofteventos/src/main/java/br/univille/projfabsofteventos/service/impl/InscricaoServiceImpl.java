@@ -25,13 +25,18 @@ public class InscricaoServiceImpl implements InscricaoService {
 
     @Override
     public Inscricao save(Inscricao inscricao) {
-        if (inscricao.getEvento() == null || !eventoRepository.existsById(inscricao.getEvento().getId())) {
-            throw new IllegalArgumentException("Evento não encontrado.");
+        try {
+            if (inscricao.getEvento() == null || !eventoRepository.existsById(inscricao.getEvento().getId())) {
+                throw new IllegalArgumentException("Evento não encontrado.");
+            }
+            if (inscricao.getUsuario() == null || !usuarioRepository.existsById(inscricao.getUsuario().getId())) {
+                throw new IllegalArgumentException("Usuário não encontrado.");
+            }
+            return repository.save(inscricao);
+        } catch (Exception e) {
+            System.err.println("Erro ao salvar inscrição: " + e.getMessage());
+            throw e;
         }
-        if (inscricao.getUsuario() == null || !usuarioRepository.existsById(inscricao.getUsuario().getId())) {
-            throw new IllegalArgumentException("Usuário não encontrado.");
-        }
-        return repository.save(inscricao);
     }
 
     @Override

@@ -36,21 +36,25 @@ public class InscricaoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Inscricao> putInscricao(@PathVariable long id, @RequestBody Inscricao inscricao) {
+    public ResponseEntity<?> putInscricao(@PathVariable long id, @RequestBody Inscricao inscricao) {
         if (id <= 0 || inscricao == null) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().body("ID inválido ou inscrição nula.");
         }
         var inscricaoAntiga = service.getById(id);
         if (inscricaoAntiga == null) {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Inscrição não encontrada.");
         }
 
-        inscricaoAntiga.setDataInscricao(inscricao.getDataInscricao());
-        inscricaoAntiga.setEvento(inscricao.getEvento());
-        inscricaoAntiga.setUsuario(inscricao.getUsuario());
+        try {
+            inscricaoAntiga.setDataInscricao(inscricao.getDataInscricao());
+            inscricaoAntiga.setEvento(inscricao.getEvento());
+            inscricaoAntiga.setUsuario(inscricao.getUsuario());
 
-        service.save(inscricaoAntiga);
-        return new ResponseEntity<>(inscricaoAntiga, HttpStatus.OK);
+            var inscricaoAtualizada = service.save(inscricaoAntiga);
+            return new ResponseEntity<>(inscricaoAtualizada, HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @DeleteMapping("/{id}")
