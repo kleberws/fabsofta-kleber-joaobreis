@@ -128,3 +128,41 @@ Content-Type: application/json
 ### API SUPORTE - DELETE
 DELETE http://localhost:8080/api/v1/suportes/1
 Content-Type: application/json
+
+
+### API PAGAMENTOS - GET
+GET http://localhost:8080/api/pagamentos
+
+### API PAGAMENTOS - POST
+POST http://localhost:8080/api/pagamentos
+Content-Type: application/json
+
+{
+    "inscricao": {
+        "id": 1
+    },
+    "valor": 100.0,
+    "dataPagamento": "2025-05-14",
+    "metodoPagamento": "Cartão de Crédito"
+}
+
+### API PAGAMENTOS - DELETE
+DELETE http://localhost:8080/api/pagamentos/1
+Content-Type: application/json
+
+
+### API CATEGORIAS - GET
+GET http://localhost:8080/api/categorias
+
+### API CATEGORIAS - POST
+POST http://localhost:8080/api/categorias
+Content-Type: application/json
+
+{
+    "nome": "Tecnologia",
+    "descricao": "Eventos relacionados a inovações tecnológicas."
+}
+
+### API CATEGORIAS - DELETE
+DELETE http://localhost:8080/api/categorias/1
+Content-Type: application/json

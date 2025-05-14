@@ -8,6 +8,10 @@ import jakarta.persistence.*;
 @Entity
 public class Usuario {
 
+    public enum TipoUsuario {
+        PROMOTOR, PARTICIPANTE
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,62 +25,60 @@ public class Usuario {
     @Column(nullable = false)
     private String senha;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String tipo; // e.g., "promotor" ou "participante"
+    private TipoUsuario tipo;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-
     private Date dataDeNascimento;
 
     // Getters and Setters
-        public long getId() {
-            return id;
-        }
-    
-        public void setId(long id) {
-            this.id = id;
-        }
-    
-        public String getNome() {
-            return nome;
-        }
-    
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-    
-        public String getEmail() {
-            return email;
-        }
+    public long getId() {
+        return id;
+    }
 
-        public void setEmail(String email) {
-            this.email = email;
-        }
+    public void setId(long id) {
+        this.id = id;
+    }
 
-        public String getSenha() {
-            return senha;
-        }
+    public String getNome() {
+        return nome;
+    }
 
-        public void setSenha(String senha) {
-            this.senha = senha;
-        }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-        public String getTipo() {
-            return tipo;
-        }
+    public String getEmail() {
+        return email;
+    }
 
-        public void setTipo(String tipo) {
-            this.tipo = tipo;
-        }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-        public Date getDataDeNascimento() {
-            return dataDeNascimento;
-        }
+    public String getSenha() {
+        return senha;
+    }
 
-        public void setDataDeNascimento(Date dataDeNascimento) {
-            this.dataDeNascimento = dataDeNascimento;
-        }
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
-        
+    public TipoUsuario getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoUsuario tipo) {
+        this.tipo = tipo;
+    }
+
+    public Date getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(Date dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
 }
