@@ -14,7 +14,7 @@ import java.util.List;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioService service;
+    private UsuarioService service; // Corrigido para UsuarioService
 
     @GetMapping
     public ResponseEntity<List<Usuario>> getUsuarios() {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.univille.projfabsofteventos.entity.Usuario;
 
+
 public interface UsuarioService {
     //salvar usuario
     Usuario save(Usuario usuario);
