@@ -2,6 +2,7 @@ package br.univille.projfabsofteventos.entity;
 
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.*;
 
@@ -24,9 +25,9 @@ public class Usuario {
     @Column(nullable = false)
     private String tipo; // e.g., "promotor" ou "participante"
 
-    @Temporal(TemporalType.DATE)
+     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dataDeNascimento;
 
     // Getters and Setters
