@@ -1,22 +1,36 @@
 <div class="container mt-4">
   <h2>Lista de Eventos</h2>
 
-  <table class="table table-bordered">
+  <table class="table">
     <thead>
       <tr>
-        <th>ID</th>
+        <th>Id</th>
         <th>Nome</th>
         <th>Data</th>
         <th>Local</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let evento of eventos">
-        <td>{{ evento.id }}</td>
-        <td>{{ evento.nome }}</td>
-        <td>{{ evento.data }}</td>
-        <td>{{ evento.local }}</td>
-      </tr>
+      <ng-container *ngFor="let event of eventos">
+        <tr>
+          <td>{{ event.id }}</td>
+          <td>{{ event.nome }}</td>
+          <td>{{ event.data }}</td>
+          <td>{{ event.local }}</td>
+          <td>
+            <button class="btn btn-sm btn-info me-1" (click)="toggleDescricao(event.id)">
+              {{ descricaoAbertaId === event.id ? '-' : '+' }}
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="descricaoAbertaId === event.id">
+          <td colspan="5" class="bg-light">
+            <strong>Descrição:</strong><br />
+            {{ event.descricao || 'Sem descrição informada.' }}
+          </td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 </div>

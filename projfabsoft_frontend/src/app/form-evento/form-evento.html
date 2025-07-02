@@ -17,6 +17,17 @@
         <input type="text" id="local" class="form-control" [(ngModel)]="evento.local" name="local" required />
       </div>
 
+      <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea
+          id="descricao"
+          class="form-control"
+          [(ngModel)]="evento.descricao"
+          name="descricao"
+          rows="4"
+        ></textarea>
+      </div>
+
       <button type="submit" class="btn btn-primary w-100">Salvar</button>
     </form>
   </div>

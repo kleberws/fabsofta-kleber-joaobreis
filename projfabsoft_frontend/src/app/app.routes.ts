@@ -8,8 +8,10 @@ import { FormEvento } from './form-evento/form-evento';
 export const routes: Routes = [
   { path: 'usuarios', component: UsuarioComponent },
   { path: 'usuarios/novo', component: FormUsuario },
+  { path: 'usuarios/alterar/:id', component: FormUsuario }, 
   { path: 'criareventos', component: CriarEventosComponent },
   { path: 'criareventos/novoevento', component: FormEvento },
+  { path: 'criareventos/alterar/:id', component: FormEvento }, 
   { path: 'listadeeventos', component: ListaEventosComponent },
   { path: '', redirectTo: '/usuarios', pathMatch: 'full' }
 ];

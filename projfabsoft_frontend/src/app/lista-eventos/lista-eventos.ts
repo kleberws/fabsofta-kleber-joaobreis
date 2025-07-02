@@ -10,8 +10,13 @@ import { EventoService } from '../service/evento.service';
 })
 export class ListaEventosComponent {
   eventos: any[] = [];
+  descricaoAbertaId: number | null = null; // Adicionado para controlar a exibição da descrição
 
   constructor(private eventoService: EventoService) {
     this.eventos = this.eventoService.listar();
+  }
+
+  toggleDescricao(id: number): void {
+    this.descricaoAbertaId = this.descricaoAbertaId === id ? null : id;
   }
 }

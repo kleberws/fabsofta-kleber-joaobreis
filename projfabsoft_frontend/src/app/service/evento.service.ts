@@ -16,19 +16,24 @@ export class EventoService {
   }
 
   adicionar(evento: any) {
+  if (evento.id) {
+    const index = this.eventos.findIndex(e => e.id === evento.id);
+    if (index !== -1) {
+      this.eventos[index] = { ...evento };
+    }
+  } else {
     evento.id = this.proximoId++;
     this.eventos.push({ ...evento });
-    this.salvarNoLocalStorage();
   }
-
-excluir(id: number): void {
-  this.eventos = this.eventos.filter(evento => evento.id !== id);
   this.salvarNoLocalStorage();
 }
 
+  excluir(id: number): void {
+    this.eventos = this.eventos.filter(evento => evento.id !== id);
+    this.salvarNoLocalStorage();
+  }
 
-
-  buscarPorId(id: number) {
+  getById(id: number) {
     return this.eventos.find(e => e.id === id);
   }
 

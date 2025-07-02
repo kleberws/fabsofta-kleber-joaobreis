@@ -15,6 +15,13 @@ export class CriarEventosComponent {
   eventos: any[] = [];
   eventoSelecionado: any = null;
 
+  evento: any = {
+    nome: '',
+    data: '',
+    local: '',
+    descricao: ''
+  };
+
   constructor(
     private router: Router,
     private eventoService: EventoService
@@ -28,13 +35,9 @@ export class CriarEventosComponent {
 
   confirmarExclusao() {
     if (this.eventoSelecionado) {
-      // Remove do service
       this.eventoService.excluir(this.eventoSelecionado.id);
-
-      // Atualiza a lista
       this.eventos = this.eventoService.listar();
 
-      // Fecha o modal
       const modalElement = document.getElementById('modalExcluir');
       if (modalElement) {
         const modalInstance =
@@ -43,7 +46,6 @@ export class CriarEventosComponent {
         modalInstance.hide();
       }
 
-      // Remove o backdrop, se ainda estiver visível
       document.querySelectorAll('.modal-backdrop').forEach((el) => el.remove());
     }
   }
