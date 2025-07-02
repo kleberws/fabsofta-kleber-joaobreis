@@ -5,10 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
+import { NavbarComponent } from '../navbar/navbar';
+
 
 @Component({
   selector: 'app-usuario',
-  imports: [HttpClientModule, CommonModule],
+  imports: [HttpClientModule, CommonModule,],
   templateUrl: './usuario.html',
   styleUrls: ['./usuario.css'],
   providers: [UsuarioService, Router]

@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <h2>Eventos</h2>
+  <div class="mb-3">
+    <a class="btn btn-primary" routerLink="/criareventos/novoevento">Novo</a>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Data</th>
+        <th>Local</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of eventos">
+        <td>{{ event.id }}</td>
+        <td>{{ event.nome }}</td>
+        <td>{{ event.data }}</td>
+        <td>{{ event.local }}</td>
+        <td>
+          <button class="btn btn-sm btn-secondary me-2" (click)="alterarEvento(event)">Alterar</button>
+          <button
+            class="btn btn-sm btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#modalExcluir"
+            (click)="abrirModalExcluir(event)">
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal de Exclusão -->
+<div class="modal fade" id="modalExcluir" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir evento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        Confirma a exclusão do evento <strong>{{ eventoSelecionado?.nome }}</strong>?
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-danger" (click)="confirmarExclusao()">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>

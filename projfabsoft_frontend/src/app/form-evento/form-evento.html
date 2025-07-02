@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <h2>Evento</h2>
+  <div class="border p-4 rounded mx-auto" style="max-width: 600px;">
+    <form (ngSubmit)="salvar()">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" id="nome" class="form-control" [(ngModel)]="evento.nome" name="nome" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="data" class="form-label">Data</label>
+        <input type="date" id="data" class="form-control" [(ngModel)]="evento.data" name="data" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="local" class="form-label">Local</label>
+        <input type="text" id="local" class="form-control" [(ngModel)]="evento.local" name="local" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Salvar</button>
+    </form>
+  </div>
+</div>
