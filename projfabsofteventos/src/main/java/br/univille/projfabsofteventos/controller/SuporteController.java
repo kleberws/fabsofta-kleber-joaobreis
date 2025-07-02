@@ -1,6 +1,7 @@
 package br.univille.projfabsofteventos.controller;
 
 import br.univille.projfabsofteventos.entity.Suporte;
+import br.univille.projfabsofteventos.entity.Usuario;
 import br.univille.projfabsofteventos.service.SuporteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,13 @@ public class SuporteController {
     public ResponseEntity<List<Suporte>> getSuportes() {
         var listaSuportes = service.getAll();
         return new ResponseEntity<>(listaSuportes, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Suporte> getSuporteId(@PathVariable Long id){
+        var suporte = service.getById(id);
+
+        return new ResponseEntity<Suporte>(suporte, HttpStatus.OK);
     }
 
     @PostMapping
