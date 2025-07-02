@@ -14,4 +14,13 @@ export class UsuarioService {
   getUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.apiURL);
   }
+  saveUsuario(usuario: Usuario) {
+    if(usuario.id){
+    return this.http.put(this.apiURL + '/' + usuario.id, usuario);
+    }
+    return this.http.post(this.apiURL,usuario);
+  }
+  getUsuarioById(id: any) {
+    return this.http.get<Usuario>(this.apiURL + '/' + id);
+  }
 }

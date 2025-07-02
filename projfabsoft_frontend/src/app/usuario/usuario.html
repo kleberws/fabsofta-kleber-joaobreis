@@ -1,19 +1,26 @@
 <main class="container">
     <h2>Usuarios</h2>
+    <a (click)="novo()" class="btn btn-primary">Novo</a>
     <table class="table">
       <thead>
         <tr>
             <th>Id</th>
             <th>Nome</th>
             <th>E-mail</th>
-
+            <th>Senha</th>
+            <th>Tipo</th>
+            <th>Data de Nascimento</th>
+        </tr>
       </thead>  
       <tbody>
         <tr *ngFor="let umUsuario of listaUsuarios">
             <td>{{umUsuario.id}}</td>
             <td>{{umUsuario.nome}}</td>
             <td>{{umUsuario.email}}</td>
-            <td></td>
+            <td>{{umUsuario.senha}}</td>
+            <td>{{umUsuario.tipo}}</td>
+            <td>{{umUsuario.dataDeNascimento}}</td>
         </tr>
+      </tbody>
     </table>
 </main>
