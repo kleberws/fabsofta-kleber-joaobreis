@@ -74,3 +74,5 @@ git config --global user.email "EMAIL DA CONTA DO GITHUB"
 - 
 - Gerar o diagrama de entidades UML
 - @workspace por favor, gere um diagrama uml utilizando o padrão plantuml para as classes no pacote br.univille.projfabsoft.entity
+
+aa
