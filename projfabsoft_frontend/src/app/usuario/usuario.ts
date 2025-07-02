@@ -1,23 +1,27 @@
 import { Component } from '@angular/core';
-import { Usuario } from '..model/usuario';
-import{ UsuarioService } from '../service/usuario'
+import { Usuario } from '../model/usuario';
+import { UsuarioService } from '../service/usuario';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-usuario',
-  imports: [],
+  imports: [HttpClientModule, CommonModule],
   templateUrl: './usuario.html',
-  styleUrls: ['./usuario.css']
-})
-export class Usuario {
+  styleUrls: ['./usuario.css'],
+  providers: [UsuarioService]
 
-  public listaUsuarios:Usuario[] = [];
-  constructor(
-    private usuarioService:UsuarioService
-  ){}
+})
+export class UsuarioComponent {
+  public listaUsuarios: Usuario[] = [];
+
+  constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit(): void {
     this.usuarioService.getUsuarios().subscribe(resposta => {
-      this.listaUsuarios = resposta
-    })
-
+      this.listaUsuarios = resposta;
+    });
   }
 }
+
+export { Usuario };
