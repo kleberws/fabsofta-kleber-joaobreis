@@ -23,10 +23,10 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> getUsuarioId(@PathVariable Long Id){
-        var Usuario = service.getById(id);
+    public ResponseEntity<Usuario> getUsuarioId(@PathVariable Long id){
+        var usuario = service.getById(id);
 
-        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK)
+        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
     }
 
     @PostMapping
