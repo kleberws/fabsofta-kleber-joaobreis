@@ -10,16 +10,13 @@
   - Exclusão de Eventos
   - Inscrição de Usuários
   - Lista de Inscrições
-  - Página de Login
 
 
 
 ## Histórias de Usuário
   - Como um promotor eu gostaria de cadastrar um evento no site.
   - Como um promotor eu gostaria de editar um evento no site.
-  - Como um promotor eu gostaria de realizar uma inscrição de usuarios para um evento.
   - Como um promotor eu gostaria de visualizar o nome das pessoas que estão cadastradas no evento.
-  - Como um usuario/promotor eu gostaria de realizar o login da sua conta no site.
   - Como um promotor eu gostaria de deletar um evento.
 
 
